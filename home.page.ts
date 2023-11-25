@@ -17,19 +17,20 @@ export class HomePage {
   constructor() {}
 
   digito(valor: string) {
-
     if (this.operador_selecionado == false) {
       if (this.resultado == "0") {
         this.resultado = valor;
       } else {
+        // Evitar múltiplos pontos decimais na mesma entrada
+        if (valor === '.' && this.resultado.includes('.')) {
+          return;
+        }
         this.resultado += valor;
       }
     } else {
       this.segundo_elemento = this.segundo_elemento + valor;
       this.resultado = this.resultado + valor;
     }
-
-
   }
 
   operador(operador_calculadora: string) {
@@ -56,7 +57,17 @@ export class HomePage {
       this.resultado = (parseInt(this.primeiro_elemento) * parseInt(this.segundo_elemento)).toString();
     } else if (this.operando == "%") {  
         this.resultado = ((parseInt(this.primeiro_elemento) * 0.01) * parseInt(this.segundo_elemento)).toString();
+    } else if (this.operando == "^") {  
+        const base = parseFloat(this.primeiro_elemento);
+        const exponente = parseFloat(this.segundo_elemento);
+        const resultadoPotencia = Math.pow(base, exponente);
+        this.resultado = resultadoPotencia.toString();
+    } else if (this.operando == "√") { 
+        const value = parseFloat(this.resultado);
+        const raizQuadrada = Math.sqrt(value);
+        this.resultado = raizQuadrada.toString();
     }
+
     this.primeiro_elemento = this.resultado;
     this.segundo_elemento = "";
     this.operando = "";
@@ -73,6 +84,7 @@ export class HomePage {
     this.operando = "";
     this.operador_selecionado = false;
   }
+  
 
  
 }
