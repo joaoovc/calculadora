@@ -7,6 +7,27 @@
         <ion-grid>
             <ion-row>
                 <ion-col>
+                    <ion-button (click)="redefinir()">
+                        C
+                    </ion-button>
+                </ion-col>
+                <ion-col>
+                    <ion-button (click)="operador('%')">
+                        %
+                    </ion-button>  
+                </ion-col>
+                <ion-col>
+                    <ion-button (click)="operador('/')">
+                        /
+                    </ion-button>
+                </ion-col>
+                <ion-col>
+                    <ion-button (click)="operador('+')">+</ion-button>
+                </ion-col>
+            </ion-row>
+
+            <ion-row>
+                <ion-col>
                     <ion-button (click)="digito('7')">7</ion-button>
                 </ion-col>
                 <ion-col>
@@ -16,7 +37,9 @@
                     <ion-button (click)="digito('9')">9</ion-button>
                 </ion-col>
                 <ion-col>
-                    <ion-button (click)="operador('+')">+</ion-button>
+                    <ion-button (click)="operador('-')">
+                        -
+                    </ion-button>
                 </ion-col>
             </ion-row>
   
@@ -37,8 +60,8 @@
                     </ion-button>
                 </ion-col>
                 <ion-col>
-                    <ion-button (click)="operador('-')">
-                        -
+                    <ion-button (click)="operador('*')">
+                        *
                     </ion-button>
                 </ion-col>
             </ion-row>
@@ -61,7 +84,7 @@
                 </ion-col>
                 <ion-col>
                     <ion-button (click)="operador('*')">
-                        *
+                        ^
                     </ion-button>
                 </ion-col>
             </ion-row>
@@ -72,30 +95,20 @@
                         0
                     </ion-button>
                 </ion-col>
-                <ion-col>
-                    <ion-button (click)="redefinir()">
-                        C
-                    </ion-button>
-                </ion-col>
-                <ion-col>
-                    <ion-button (click)="operador('/')">
-                        /
-                    </ion-button>
-                </ion-col>
-                <ion-col>
-                  <ion-button (click)="operador('%')">
-                      %
-                  </ion-button>  
-              </ion-col>
-            </ion-row>
 
-            <ion-row>
-                <ion-col></ion-col>
-                <ion-col> </ion-col>
-                <ion-col></ion-col>
+                <ion-col> 
+                    <ion-button (click)="calcular()">
+                        .
+                    </ion-button>
+                </ion-col>
                 <ion-col>
                     <ion-button (click)="calcular()">
                         =
+                    </ion-button>
+                </ion-col>
+                <ion-col>
+                    <ion-button (click)="operador('*')">
+                        √
                     </ion-button>
                 </ion-col>
             </ion-row>
