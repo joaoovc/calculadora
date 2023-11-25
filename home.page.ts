@@ -48,32 +48,44 @@ export class HomePage {
 
   calcular() {
     if (this.operando == "+") {
-      this.resultado = (parseInt(this.primeiro_elemento) + parseInt(this.segundo_elemento)).toString();
+      this.resultado = (parseFloat(this.primeiro_elemento) + parseFloat(this.segundo_elemento)).toString();
     } else if (this.operando == "-") {
-      this.resultado = (parseInt(this.primeiro_elemento) - parseInt(this.segundo_elemento)).toString();
+      this.resultado = (parseFloat(this.primeiro_elemento) - parseFloat(this.segundo_elemento)).toString();
     } else if (this.operando == "/") {
-      this.resultado = (parseInt(this.primeiro_elemento) / parseInt(this.segundo_elemento)).toString();
-    } else if (this.operando == "*"){
-      this.resultado = (parseInt(this.primeiro_elemento) * parseInt(this.segundo_elemento)).toString();
-    } else if (this.operando == "%") {  
-        this.resultado = ((parseInt(this.primeiro_elemento) * 0.01) * parseInt(this.segundo_elemento)).toString();
-    } else if (this.operando == "^") {  
+      this.resultado = (parseFloat(this.primeiro_elemento) / parseFloat(this.segundo_elemento)).toString();
+    } else if (this.operando == "*") {
+      this.resultado = (parseFloat(this.primeiro_elemento) * parseFloat(this.segundo_elemento)).toString();
+    } else if (this.operando == "P") {
+      try {
+        const value = eval(this.resultado);
+        const percentage = value * 0.01;
+        this.resultado = percentage.toString();
+      } catch (error) {
+        this.resultado = 'Error';
+      }
+    } else if (this.operando == "^") {
+      try {
         const base = parseFloat(this.primeiro_elemento);
         const exponente = parseFloat(this.segundo_elemento);
         const resultadoPotencia = Math.pow(base, exponente);
         this.resultado = resultadoPotencia.toString();
-    } else if (this.operando == "√") { 
+      } catch (error) {
+        this.resultado = 'Error';
+      }
+    } else if (this.operando == "√") {
+      try {
         const value = parseFloat(this.resultado);
         const raizQuadrada = Math.sqrt(value);
         this.resultado = raizQuadrada.toString();
+      } catch (error) {
+        this.resultado = 'Error';
+      }
     }
-
+  
     this.primeiro_elemento = this.resultado;
     this.segundo_elemento = "";
     this.operando = "";
     this.operador_selecionado = false;
-
-
   }
 
 
