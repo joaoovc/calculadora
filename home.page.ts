@@ -49,31 +49,24 @@ export class HomePage {
   calcular() {
     if (this.operando == "+") {
       this.resultado = (parseFloat(this.primeiro_elemento) + parseFloat(this.segundo_elemento)).toString();
-    } else if (this.operando == "-") {
+    }
+    else if (this.operando == "-") {
       this.resultado = (parseFloat(this.primeiro_elemento) - parseFloat(this.segundo_elemento)).toString();
-    } else if (this.operando == "/") {
+    }
+    else if (this.operando == "/") {
       this.resultado = (parseFloat(this.primeiro_elemento) / parseFloat(this.segundo_elemento)).toString();
-    } else if (this.operando == "*") {
+    }
+    else if (this.operando == "*") {
       this.resultado = (parseFloat(this.primeiro_elemento) * parseFloat(this.segundo_elemento)).toString();
-    } else if (this.operando == "%") {
-      this.resultado = ((parseInt(this.primeiro_elemento) * 0.01) * parseInt(this.segundo_elemento)).toString();
-    } else if (this.operando == "^") {
-      try {
-        const base = parseFloat(this.primeiro_elemento);
-        const exponente = parseFloat(this.segundo_elemento);
-        const resultadoPotencia = Math.pow(base, exponente);
-        this.resultado = resultadoPotencia.toString();
-      } catch (error) {
-        this.resultado = 'Error';
-      }
-    } else if (this.operando == "√") {
-      try {
-        const value = parseFloat(this.resultado);
-        const raizQuadrada = Math.sqrt(value);
-        this.resultado = raizQuadrada.toString();
-      } catch (error) {
-        this.resultado = 'Error';
-      }
+    } //Porcentagem
+    else if (this.operando == "%") {
+      this.resultado = ((parseFloat(this.primeiro_elemento) * 0.01) * parseFloat(this.segundo_elemento)).toString();
+    } //Potência
+    else if (this.operando == "^") {
+      this.resultado = Math.pow(parseFloat(this.primeiro_elemento), parseFloat(this.segundo_elemento)).toString();
+    } //Raiz quadrada
+    else if (this.operando == "√") {
+      this.resultado = Math.sqrt(parseFloat(this.primeiro_elemento)).toString();
     }
 
     this.primeiro_elemento = this.resultado;
