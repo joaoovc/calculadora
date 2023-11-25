@@ -41,9 +41,9 @@ export class HomePage {
     } else {
       console.log("Um operador já foi selecionado");
     }
-
-
   }
+  
+
 
   calcular() {
     if (this.operando == "+") {
@@ -54,7 +54,15 @@ export class HomePage {
       this.resultado = (parseInt(this.primeiro_elemento) / parseInt(this.segundo_elemento)).toString();
     } else if (this.operando == "*"){
       this.resultado = (parseInt(this.primeiro_elemento) * parseInt(this.segundo_elemento)).toString();
+    } else if (this.operando == "%") {  
+        this.resultado = ((parseInt(this.primeiro_elemento) * 0.01) * parseInt(this.segundo_elemento)).toString();
     }
+    this.primeiro_elemento = this.resultado;
+    this.segundo_elemento = "";
+    this.operando = "";
+    this.operador_selecionado = false;
+
+
   }
 
 
@@ -65,4 +73,6 @@ export class HomePage {
     this.operando = "";
     this.operador_selecionado = false;
   }
+
+ 
 }
