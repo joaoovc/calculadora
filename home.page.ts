@@ -14,7 +14,7 @@ export class HomePage {
   operando: string = "";
 
 
-  constructor() {}
+  constructor() { }
 
   digito(valor: string) {
     if (this.operador_selecionado == false) {
@@ -43,7 +43,7 @@ export class HomePage {
       console.log("Um operador já foi selecionado");
     }
   }
-  
+
 
 
   calcular() {
@@ -55,14 +55,8 @@ export class HomePage {
       this.resultado = (parseFloat(this.primeiro_elemento) / parseFloat(this.segundo_elemento)).toString();
     } else if (this.operando == "*") {
       this.resultado = (parseFloat(this.primeiro_elemento) * parseFloat(this.segundo_elemento)).toString();
-    } else if (this.operando == "P") {
-      try {
-        const value = eval(this.resultado);
-        const percentage = value * 0.01;
-        this.resultado = percentage.toString();
-      } catch (error) {
-        this.resultado = 'Error';
-      }
+    } else if (this.operando == "%") {
+      this.resultado = ((parseInt(this.primeiro_elemento) * 0.01) * parseInt(this.segundo_elemento)).toString();
     } else if (this.operando == "^") {
       try {
         const base = parseFloat(this.primeiro_elemento);
@@ -81,7 +75,7 @@ export class HomePage {
         this.resultado = 'Error';
       }
     }
-  
+
     this.primeiro_elemento = this.resultado;
     this.segundo_elemento = "";
     this.operando = "";
@@ -96,7 +90,7 @@ export class HomePage {
     this.operando = "";
     this.operador_selecionado = false;
   }
-  
 
- 
+
+
 }
