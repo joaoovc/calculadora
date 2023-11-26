@@ -34,46 +34,46 @@ export class HomePage {
   }
 
   operador(operador_calculadora: string) {
-    if (this.operador_selecionado == false) {
-      this.primeiro_elemento = this.resultado;
-      this.resultado = this.resultado + operador_calculadora;
-      this.operador_selecionado = true;
-      this.operando = operador_calculadora;
-    } else {
-      console.log("Um operador já foi selecionado");
+    if (this.operador_selecionado) {
+      this.calcular();
     }
+  
+    this.primeiro_elemento = this.resultado;
+    this.resultado = this.resultado + operador_calculadora;
+    this.operador_selecionado = true;
+    this.operando = operador_calculadora;
   }
-
+  
 
 
   calcular() {
-    if (this.operando == "+") {
-      this.resultado = (parseFloat(this.primeiro_elemento) + parseFloat(this.segundo_elemento)).toString();
+    if (this.operando) {
+      this.segundo_elemento = this.resultado.substring(this.resultado.indexOf(this.operando) + 1);
+      this.resultado = this.resultado.replace(this.segundo_elemento, '');
+  
+      if (this.operando == "+") {
+        this.resultado = (parseFloat(this.primeiro_elemento) + parseFloat(this.segundo_elemento)).toString();
+      } else if (this.operando == "-") {
+        this.resultado = (parseFloat(this.primeiro_elemento) - parseFloat(this.segundo_elemento)).toString();
+      } else if (this.operando == "/") {
+        this.resultado = (parseFloat(this.primeiro_elemento) / parseFloat(this.segundo_elemento)).toString();
+      } else if (this.operando == "*") {
+        this.resultado = (parseFloat(this.primeiro_elemento) * parseFloat(this.segundo_elemento)).toString();
+      } else if (this.operando == "%") {
+        this.resultado = ((parseFloat(this.primeiro_elemento) * 0.01) * parseFloat(this.segundo_elemento)).toString();
+      } else if (this.operando == "^") {
+        this.resultado = Math.pow(parseFloat(this.primeiro_elemento), parseFloat(this.segundo_elemento)).toString();
+      } else if (this.operando == "√") {
+        this.resultado = Math.sqrt(parseFloat(this.primeiro_elemento)).toString();
+      }
+  
+      this.primeiro_elemento = this.resultado;
+      this.segundo_elemento = "";
+      this.operando = "";
+      this.operador_selecionado = false;
     }
-    else if (this.operando == "-") {
-      this.resultado = (parseFloat(this.primeiro_elemento) - parseFloat(this.segundo_elemento)).toString();
-    }
-    else if (this.operando == "/") {
-      this.resultado = (parseFloat(this.primeiro_elemento) / parseFloat(this.segundo_elemento)).toString();
-    }
-    else if (this.operando == "*") {
-      this.resultado = (parseFloat(this.primeiro_elemento) * parseFloat(this.segundo_elemento)).toString();
-    } //Porcentagem
-    else if (this.operando == "%") {
-      this.resultado = ((parseFloat(this.primeiro_elemento) * 0.01) * parseFloat(this.segundo_elemento)).toString();
-    } //Potência
-    else if (this.operando == "^") {
-      this.resultado = Math.pow(parseFloat(this.primeiro_elemento), parseFloat(this.segundo_elemento)).toString();
-    } //Raiz quadrada
-    else if (this.operando == "√") {
-      this.resultado = Math.sqrt(parseFloat(this.primeiro_elemento)).toString();
-    }
-
-    this.primeiro_elemento = this.resultado;
-    this.segundo_elemento = "";
-    this.operando = "";
-    this.operador_selecionado = false;
   }
+  
 
 
   redefinir() {
