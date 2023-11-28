@@ -1,0 +1,103 @@
+#container {
+  text-align: center;
+
+  position: absolute;
+  left: 3%;
+  right: 3%;
+  top: 60%;
+  transform: translateY(-50%);
+}
+#container q {
+  text-align: center;
+
+  position: absolute;
+  left: 3%;
+  right: 3%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+#container strong {
+  font-size: 50px;
+  line-height: 50px;
+}
+
+#container p {
+  font-size: 5px;
+  line-height: 5px;
+  
+
+  color: #8c8c8c;
+
+  margin: 50;
+}
+
+#container a {
+  text-decoration: none;
+}
+#container B {
+  ion-button {
+    --background: #a5a5a5;
+    --background-hover: #9ce0be;
+    --background-activated: #88f4be;
+    --background-focused: #88f4be;
+  
+    --color: rgb(0, 0, 0);
+  
+    --border-radius: 500%;
+    --border-color: #a5a5a5;
+    --border-style: solid;
+    --border-width: 13px;
+  
+    --box-shadow: 0 2px 6px 0 rgb(0, 0, 0, 0.25);
+  
+    --ripple-color: deeppink;
+  
+    --padding-top: 15px;
+    --padding-bottom: 15px;
+  }
+}
+#container A {
+  ion-button {
+    --background: #ef9b38;
+    --background-hover: #9ce0be;
+    --background-activated: #88f4be;
+    --background-focused: #88f4be;
+  
+    --color: rgb(255, 255, 255);
+  
+    --border-radius: 500%;
+    --border-color: #ef9b38;
+    --border-style: solid;
+    --border-width: 13px;
+  
+    --box-shadow: 0 2px 6px 0 rgb(0, 0, 0, 0.25);
+  
+    --ripple-color: deeppink;
+  
+    --padding-top: 15px;
+    --padding-bottom: 15px;
+  }
+
+}
+#container p {
+  ion-button {
+    --background: #333333;
+    --background-hover: #9ce0be;
+    --background-activated: #88f4be;
+    --background-focused: #88f4be;
+  
+    --color: rgb(255, 255, 255);
+  
+    --border-radius: 500%;
+    --border-color: #333333;
+    --border-style: solid;
+    --border-width: 13px;
+  
+    --box-shadow: 0 2px 6px 0 rgb(0, 0, 0, 0.25);
+  
+    --ripple-color: deeppink;
+  
+    --padding-top: 15px;
+    --padding-bottom: 15px;
+  }
+}
