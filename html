@@ -1,0 +1,144 @@
+<ion-content [fullscreen]="true">
+
+
+    <div id="container">
+        
+    </div>
+    <div id="container">
+        <h1><strong>{{ resultado }}</strong></h1>
+        <ion-grid>
+
+            <ion-row>
+                <B>
+                    <ion-col>
+                        <ion-button (click)="redefinir()">
+                            C
+                        </ion-button>
+                    </ion-col>
+                    <ion-col>
+                        <ion-button (click)="operador('%')">
+                            %
+                        </ion-button>
+                    </ion-col>
+                    <ion-col>
+                        <ion-button (click)="operador('÷')">
+                            ÷
+                        </ion-button>
+                    </ion-col>
+                </B>
+                <A>
+                    <ion-col>
+                        <ion-button (click)="operador('+')">+</ion-button>
+                    </ion-col>
+                </A>
+            </ion-row>
+
+
+            <ion-row>
+                <p>
+                    <ion-col>
+                        <ion-button (click)="digito('7')">7</ion-button>
+                    </ion-col>
+                    <ion-col>
+                        <ion-button (click)="digito('8')">8</ion-button>
+                    </ion-col>
+                    <ion-col>
+                        <ion-button (click)="digito('9')">9</ion-button>
+                    </ion-col>
+                </p>
+                <A>
+                    <ion-col>
+                        <ion-button (click)="operador('-')">
+                            -
+                        </ion-button>
+                    </ion-col>
+                </A>
+            </ion-row>
+
+            <ion-row>
+                <p>
+                    <ion-col>
+                        <ion-button (click)="digito('4')">
+                            4
+                        </ion-button>
+                    </ion-col>
+                    <ion-col>
+                        <ion-button (click)="digito('5')">
+                            5
+                        </ion-button>
+                    </ion-col>
+                    <ion-col>
+                        <ion-button (click)="digito('6')">
+                            6
+                        </ion-button>
+                    </ion-col>
+                </p>
+                <a>
+                    <ion-col>
+                        <ion-button (click)="operador('*')">
+                            *
+                        </ion-button>
+                    </ion-col>
+                </a>
+            </ion-row>
+
+            <ion-row>
+                <p>
+                    <ion-col>
+                        <ion-button (click)="digito('1')">
+                            1
+                        </ion-button>
+                    </ion-col>
+                    <ion-col>
+                        <ion-button (click)="digito('2')">
+                            2
+                        </ion-button>
+                    </ion-col>
+                    <ion-col>
+                        <ion-button (click)="digito('3')">
+                            3
+                        </ion-button>
+                    </ion-col>
+                </p>
+                <a>
+                    <ion-col>
+                        <ion-button (click)="operador('*')">
+                            ^
+                        </ion-button>
+                    </ion-col>
+                </a>
+            </ion-row>
+
+            <ion-row>
+                <p>
+                    <ion-col>
+                        <ion-button (click)="digito('0')">
+                            0
+                        </ion-button>
+                    </ion-col>
+                    <ion-col>
+                        <ion-button (click)="calcular()">
+                            .
+                        </ion-button>
+                    </ion-col>
+                    <ion-col>
+                        <ion-button (click)="calcular()">
+                            =
+                        </ion-button>
+                    </ion-col>
+                </p>
+                <a>
+                    <ion-col>
+                        <ion-button (click)="operador('√')">
+                            √
+                        </ion-button>
+                    </ion-col>
+                </a>
+            </ion-row>
+        </ion-grid>
+    </div>
+
+</ion-content>
+<div id="container">
+
+</div>
